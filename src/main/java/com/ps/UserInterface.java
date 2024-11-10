@@ -7,11 +7,13 @@ import java.util.Scanner;
 import java.util.zip.CheckedOutputStream;
 
 public class UserInterface {
-    static final Scanner keyboard =new Scanner(System.in);
+    static final Scanner customerInput =new Scanner(System.in);
+    static final Scanner commandScanner = new Scanner(System.in);
     static String customerName= "";
 
     public static List<Sandwich> sandwichOrder = new ArrayList<>();
-    public static Order customerOrder = new Order(customerName);
+
+    public static Order order = new Order();
 
     public static List<String> bread = new ArrayList<>();
     public static List<String> meatToppings = new ArrayList<>();
@@ -64,68 +66,77 @@ public class UserInterface {
     public static void getCustomerName (String name){
         customerName = name;}
 
-   do{
+
+
+public static void mainMenu() {
+
+    int mainCommand=  0;
+
+    do {
         System.out.println("Please choose an option: ");
         System.out.println("1) New Order");
-        System.out.println("2) Exit");
+        System.out.println("0) Exit");
 
         System.out.println("Command: ");
         mainCommand = commandScanner.nextInt();
 
-        switch (mainCommand){
+        switch (mainCommand) {
             case 1:
                 handleNewOrder();
+                break;
             case 0:
                 System.out.println("Exiting...");
+                break;
             default:
                 System.out.println("Command not found, please try again...");
 
         }
 
-    }while( mainCommand != 2);
+    } while (mainCommand != 0);
+}
 
-   private static void handleNewOrder(){
-       System.out.println("1) Add Sandwich ");
-       System.out.println("2) Add Drink");
-       System.out.println("3) Add Chips");
-       System.out.println("4) Checkout");
-       System.out.println("0) Cancel Order ");
+   private static void handleNewOrder() {
 
-//       HashMap<Integer, String> newOrder = new HashMap<>();
-//       newOrder.put(1, "Add Sandwich");
-//       newOrder.put(2, "Add Drink");
-//       newOrder.put(3, "Add Chips");
-//       newOrder.put(4, "Checkout");
-//       newOrder.put(0, "Cancel Order");
+       int newOrderInput;
 
-       System.out.println("Selection: ");
-       Scanner commandScanner;
-       int newOrderInput = commandScanner.nextInt();
+       do {
 
-       switch(newOrderInput) {
-           case 1:
-               handleAddSandwich():
-               break;
-           case 2:
-               handleAddDrink();
-               break;
-           case 3:
-               handleAddChips();
-               break;
-           case 4:
-               handleCheckOut;
-               break:
-           case 0:
-               System.out.println("Cancelling Order...");
-               break;
-           default:
-               System.out.println("Command not found, please try again...");
+           System.out.println("1) Add Sandwich ");
+           System.out.println("2) Add Drink");
+           System.out.println("3) Add Chips");
+           System.out.println("4) Checkout");
+           System.out.println("0) Cancel Order ");
 
-       }
+
+           System.out.println("Selection: ");
+           newOrderInput = commandScanner.nextInt();
+
+           switch (newOrderInput) {
+               case 1:
+                   handleAddSandwich();
+                   break;
+               case 2:
+                   handleAddDrink();
+                   break;
+               case 3:
+                   handleAddChips();
+                   break;
+               case 4:
+                   handleCheckOut();
+                   break;
+               case 0:
+                   System.out.println("Cancelling Order...");
+                   break;
+               default:
+                   System.out.println("Command not found, please try again...");
+
+           }
+       } while (newOrderInput != 0);
    }
 
     private static void handleAddSandwich() {
-        System.out.println("Select your bread " + bread);
+
+        // menus menus menus
         // present bread type
         // customer chooses bread type
         // record customer choice
@@ -139,7 +150,7 @@ public class UserInterface {
     private static void handleAddDrink() {
         System.out.println("Add drink") ;
         // Show drink options
-        //record customer drik choice
+        //record customer drink choice
         // present drink sizes
         // record drink size
 

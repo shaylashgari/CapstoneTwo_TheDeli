@@ -12,11 +12,12 @@ public class Order {
 
     // constructor
 
-    public Order(List<Sandwich> sandwich, List<BagOfChips> chips, List<Drink> drinks) {
+    public Order() {
         this.sandwich = new ArrayList<>();
         this.chips = new ArrayList<>();
         this.drinks = new ArrayList<>();
     }
+
 
 
     // Add methods
@@ -32,6 +33,7 @@ public class Order {
     public void addDrinks(Drink drinks){
         this.drinks.add(drinks);
     }
+
 
     // Get method that returns list of items selected
 

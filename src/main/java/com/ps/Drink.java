@@ -13,7 +13,7 @@ public class Drink implements Product{
     }
 
     @Override
-    price double getPrice{
+    public double getPrice(){
         return 0;
     }
 
@@ -35,8 +35,7 @@ public class Drink implements Product{
         this.name = name;
     }
 
-    @Override
-    public double getPrice() {
+    public double getBasePrice() {
         return price;
     }
 
@@ -48,11 +47,4 @@ public class Drink implements Product{
         this.size = size;
     }
 
-    public double getGetPrice() {
-        return getPrice;
-    }
-
-    public void setGetPrice(double getPrice) {
-        this.getPrice = getPrice;
-    }
 }
