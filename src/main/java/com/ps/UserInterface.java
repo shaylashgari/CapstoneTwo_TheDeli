@@ -136,6 +136,17 @@ public static void mainMenu() {
 
     private static void handleAddSandwich() {
 
+        System.out.println("What bread type would you like?");
+        System.out.println("1) White 2)Wheat 3) Rye 4) Wrap");
+        String bread = customerInput.nextLine();
+
+        System.out.println("What size would you like?");
+        System.out.println("1) 4 inch 2) 8 inch 3) 12 inch");
+        String size = customerInput.nextLine();
+
+        System.out.println("What toppings would you like?");
+        System.out.println(" ");
+
         // menus menus menus
         // present bread type
         // customer chooses bread type

@@ -1,6 +1,34 @@
 package com.ps;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class FileManager {
     // this is where the buff writer, inside order class call file manager to write csv
     // copy and paste from last capstone
+    // where you would have buffer writer
+
+    public static void saveOrder(Order order){
+        try{
+
+            // modify line 17 based on what you want to display in csv file
+
+            BufferedWriter writeOrder = new BufferedWriter(new FileWriter("Order.csv"));
+            String firstLine = String.format("%s|%s|%s|", order.getSandwich(), order.getDrinks(), order.getChips());
+            writeOrder.write(firstLine);
+
+
+
+
+
+            writeOrder.close();
+
+        }catch (IOException e){e.printStackTrace();}
+
+
+    }
+
+
+    // do try catch
 }
