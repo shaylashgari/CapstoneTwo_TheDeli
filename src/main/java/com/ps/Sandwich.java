@@ -3,33 +3,75 @@ package com.ps;
 import java.util.List;
 
 public class Sandwich implements Product {
-    private int size;
-    private List<Topping> toppings;
+    private final String description;
+    private List<String> bread;
+    private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
     private boolean isToasted;
-    private String typeBread;
+    private String sandwichSize;
+    private double extraMeat, extraCheese, price;
 
-    public Sandwich(int size, List<Topping> toppings, boolean isToasted, String typeBread) {
-        this.size = size;
-        this.toppings = toppings;
+    public Sandwich(String description, List<String> bread, List<String> meatToppings, List<String> regularToppings, List<String> sauce, List<String> cheeseToppings, List<String> sides, boolean isToasted, String sandwichSize, double extraCheese, double extraMeat, double price) {
+        this.description = description;
+        this.bread = bread;
+        this.meatToppings = meatToppings;
+        this.regularToppings = regularToppings;
+        this.sauce = sauce;
+        this.cheeseToppings = cheeseToppings;
+        this.sides = sides;
         this.isToasted = isToasted;
-        this.typeBread = typeBread;
+        this.sandwichSize = sandwichSize;
+        this.extraCheese = extraCheese;
+        this.extraMeat = extraMeat;
+        this.price = price;
     }
 
-
-    public int getSize() {
-        return size;
+    @Override
+    public double getPrice(){
+        return 0;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public String getDescription() {
+        return description;
     }
 
-    public List<Topping> getToppings() {
-        return toppings;
+    public List<String> getBread() {
+        return bread;
     }
 
-    public void setToppings(List<Topping> toppings) {
-        this.toppings = toppings;
+    public void setBread(List<String> bread) {
+        this.bread = bread;
+    }
+
+    public List<String> getMeatToppings() {
+        return meatToppings;
+    }
+
+    public void setMeatToppings(List<String> meatToppings) {
+        this.meatToppings = meatToppings;
+    }
+
+    public List<String> getCheeseToppings() {
+        return cheeseToppings;
+    }
+
+    public void setCheeseToppings(List<String> cheeseToppings) {
+        this.cheeseToppings = cheeseToppings;
+    }
+
+    public List<String> getSauce() {
+        return sauce;
+    }
+
+    public void setSauce(List<String> sauce) {
+        this.sauce = sauce;
+    }
+
+    public List<String> getRegularToppings() {
+        return regularToppings;
+    }
+
+    public void setRegularToppings(List<String> regularToppings) {
+        this.regularToppings = regularToppings;
     }
 
     public boolean isToasted() {
@@ -40,16 +82,39 @@ public class Sandwich implements Product {
         isToasted = toasted;
     }
 
-    public String getTypeBread() {
-        return typeBread;
+    public List<String> getSides() {
+        return sides;
     }
 
-    public void setTypeBread(String typeBread) {
-        this.typeBread = typeBread;
+    public void setSides(List<String> sides) {
+        this.sides = sides;
     }
 
-    @Override
-    public double getPrice(){
-        return 0;
+    public String getSandwichSize() {
+        return sandwichSize;
+    }
+
+    public void setSandwichSize(String sandwichSize) {
+        this.sandwichSize = sandwichSize;
+    }
+
+    public double getExtraMeat() {
+        return extraMeat;
+    }
+
+    public void setExtraMeat(double extraMeat) {
+        this.extraMeat = extraMeat;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getExtraCheese() {
+        return extraCheese;
+    }
+
+    public void setExtraCheese(double extraCheese) {
+        this.extraCheese = extraCheese;
     }
 }
