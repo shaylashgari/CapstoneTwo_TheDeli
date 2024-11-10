@@ -2,7 +2,7 @@ package com.ps;
 
 import java.util.List;
 
-public class Sandwich implements Product {
+public abstract class Sandwich implements Product {
     private final String description;
     private List<String> bread;
     private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
@@ -28,6 +28,11 @@ public class Sandwich implements Product {
     @Override
     public double getPrice(){
         return 0;
+    }
+
+    @Override
+    public String getSize() {
+        return "";
     }
 
     public String getDescription() {
