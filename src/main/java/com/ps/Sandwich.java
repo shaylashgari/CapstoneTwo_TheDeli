@@ -3,15 +3,13 @@ package com.ps;
 import java.util.List;
 
 public abstract class Sandwich implements Product {
-    private final String description;
     private List<String> bread;
     private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
     private boolean isToasted;
     private String sandwichSize;
     private double extraMeat, extraCheese, price;
 
-    public Sandwich(String description, List<String> bread, List<String> meatToppings, List<String> regularToppings, List<String> sauce, List<String> cheeseToppings, List<String> sides, boolean isToasted, String sandwichSize, double extraCheese, double extraMeat, double price) {
-        this.description = description;
+    public Sandwich(List<String> bread, List<String> meatToppings, List<String> regularToppings, List<String> sauce, List<String> cheeseToppings, List<String> sides, boolean isToasted, String sandwichSize, double extraCheese, double extraMeat, double price) {
         this.bread = bread;
         this.meatToppings = meatToppings;
         this.regularToppings = regularToppings;
@@ -27,6 +25,7 @@ public abstract class Sandwich implements Product {
 
     @Override
     public double getPrice(){
+    // use switch statement to getprice
         return 0;
     }
 

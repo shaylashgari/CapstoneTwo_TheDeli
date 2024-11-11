@@ -138,14 +138,30 @@ public static void mainMenu() {
 
         System.out.println("What bread type would you like?");
         System.out.println("1) White 2)Wheat 3) Rye 4) Wrap");
-        String bread = customerInput.nextLine();
+        Integer bread = customerInput.nextInt();
+        // switch statement
 
         System.out.println("What size would you like?");
         System.out.println("1) 4 inch 2) 8 inch 3) 12 inch");
-        String size = customerInput.nextLine();
+        Integer size = customerInput.nextInt();
+        String sandwichSize;
+
+
+        switch (size){
+            case 1:
+                sandwichSize = "4 inch";
+               break;
+            case 2:
+                sandwichSize = "8 inch";
+                break;
+            case 3:
+                sandwichSize = "12 inch";
+            default:
+                System.out.println("Command not found, please try again...");
+        }
 
         System.out.println("What toppings would you like?");
-        System.out.println(" ");
+
 
         // menus menus menus
         // present bread type
