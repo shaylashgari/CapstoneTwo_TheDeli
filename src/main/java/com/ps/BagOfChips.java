@@ -1,40 +1,38 @@
 package com.ps;
 
 public class BagOfChips implements Product {
-    private String chipName;
-    private double price;
+    private String name;
+
 
     public BagOfChips(String name){
         this.name = name;
-        this.price = 1.50;
+
     }
 
     @Override
     public double getPrice(){
-        return 0;
+
+        return 1.50;
     }
 
-    @Override
-    public String getSize(){
-        return "N/A";
-    }
-
-    // not sure why this one is gray
-
-    @Override
-    public String getDescription(){
-        return "Chips";
-    }
+//    @Override
+//    public String getSize(){
+//        return "N/A";
+//    }
+//
+//    // not sure why this one is gray
+//
+//    @Override
+//    public String getDescription(){
+//        return "Chips";
+//    }
 
     public String getChipName() {
-        return chipName;
+        return name;
     }
 
     public void setChipName(String chipName) {
-        this.chipName = chipName;
+        this.name = chipName;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 }

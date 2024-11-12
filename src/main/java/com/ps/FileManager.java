@@ -15,9 +15,7 @@ public class FileManager {
             // modify line 17 based on what you want to display in csv file
 
             BufferedWriter writeOrder = new BufferedWriter(new FileWriter("Order.csv"));
-            String firstLine = String.format("%s|%s|%s|", order.getSandwich(), order.getDrinks(), order.getChips());
-            writeOrder.write(firstLine);
-
+            // loop through all products and print them into the csv file
 
 
 

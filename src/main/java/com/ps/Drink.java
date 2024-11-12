@@ -12,17 +12,14 @@ public class Drink implements Product{
         this.size = size;
     }
 
-    @Override
     public double getPrice(){
-        return 0;
+        return this.price;
     }
 
-    @Override
     public String getSize(){
         return size;
     }
 
-    @Override
     public String getDescription(){
         return "Drink";
     }

@@ -2,36 +2,26 @@ package com.ps;
 
 import java.util.List;
 
-public abstract class Sandwich implements Product {
+public class Sandwich implements Product {
     private List<String> bread;
     private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
     private boolean isToasted;
     private String sandwichSize;
     private double extraMeat, extraCheese, price;
 
-    public Sandwich(List<String> bread, List<String> meatToppings, List<String> regularToppings, List<String> sauce, List<String> cheeseToppings, List<String> sides, boolean isToasted, String sandwichSize, double extraCheese, double extraMeat, double price) {
-        this.bread = bread;
-        this.meatToppings = meatToppings;
-        this.regularToppings = regularToppings;
-        this.sauce = sauce;
-        this.cheeseToppings = cheeseToppings;
-        this.sides = sides;
-        this.isToasted = isToasted;
-        this.sandwichSize = sandwichSize;
-        this.extraCheese = extraCheese;
-        this.extraMeat = extraMeat;
-        this.price = price;
-    }
+    public Sandwich() {}
 
     @Override
     public double getPrice(){
-    // use switch statement to getprice
+    // calculate price of sandwich here
+        // if statement for size of sandwich
+        //
         return 0;
     }
 
-    @Override
+
     public String getSize() {
-        return "";
+        return this.sandwichSize;
     }
 
 //    public String getDescription() {
