@@ -161,6 +161,8 @@ public static void mainMenu() {
         }
 
         System.out.println("What toppings would you like?");
+        System.out.println("The toppings are" + meatToppings + cheeseToppings+ veggieToppings);
+
 
 
         // menus menus menus

@@ -56,13 +56,16 @@ public class Order {
         }
 
 
-        // ask Greg
+        // ask Greg //
 
-   public static double getOrderTotal(){
+   public double getOrderTotal(){
        double orderTotal = 0;
-       for(Sandwich sandwich: sandwiches){
-           orderTotal +=  sandwich.getPrice();
-       }
+       for (Sandwich sandwichOrder: sandwich){
+           orderTotal += sandwich.getPrice(); }
+
+//       for(Sandwich sandwich = Sandwich){
+//           orderTotal +=  sandwich.getPrice();
+//       }
        return 0;
    }
 

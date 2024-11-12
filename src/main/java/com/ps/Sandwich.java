@@ -34,9 +34,9 @@ public abstract class Sandwich implements Product {
         return "";
     }
 
-    public String getDescription() {
-        return description;
-    }
+//    public String getDescription() {
+//        return description;
+//    }
 
     public List<String> getBread() {
         return bread;
