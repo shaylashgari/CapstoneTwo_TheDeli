@@ -3,24 +3,39 @@ package com.ps;
 import java.util.List;
 
 public class Sandwich implements Product {
-    private List<String> bread;
+    private String bread;
     private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
     private boolean isToasted;
-    private String sandwichSize;
-    private double extraMeat, extraCheese, price;
+    private int sandwichSize;
 
-    public Sandwich() {}
+    boolean extraMeat;
+    boolean extraCheese;
+
+    public Sandwich(boolean extraMeat, boolean extraCheese) {
+        this.extraMeat = extraMeat;
+        this.extraCheese = extraCheese;
+
+    }
+
+
 
     @Override
-    public double getPrice(){
-    // calculate price of sandwich here
+    public double getPrice() {
+        int totalPrice = 0;
+
+        // calculate price of sandwich here
         // if statement for size of sandwich
-        //
+        // ticket price example, capstone prep
+
+        if (sandwichSize == 4 ){
+
+        }
+
         return 0;
     }
 
 
-    public String getSize() {
+    public int getSize() {
         return this.sandwichSize;
     }
 
@@ -28,11 +43,11 @@ public class Sandwich implements Product {
 //        return description;
 //    }
 
-    public List<String> getBread() {
+    public String getBread() {
         return bread;
     }
 
-    public void setBread(List<String> bread) {
+    public void setBread(String bread) {
         this.bread = bread;
     }
 
@@ -84,31 +99,29 @@ public class Sandwich implements Product {
         this.sides = sides;
     }
 
-    public String getSandwichSize() {
+    public int getSandwichSize() {
         return sandwichSize;
     }
 
-    public void setSandwichSize(String sandwichSize) {
+    public void setSandwichSize(int sandwichSize) {
         this.sandwichSize = sandwichSize;
     }
 
-    public double getExtraMeat() {
+    public boolean isExtraMeat() {
         return extraMeat;
     }
 
-    public void setExtraMeat(double extraMeat) {
+    public void setExtraMeat(boolean extraMeat) {
         this.extraMeat = extraMeat;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getExtraCheese() {
+    public boolean isExtraCheese() {
         return extraCheese;
     }
 
-    public void setExtraCheese(double extraCheese) {
+    public void setExtraCheese(boolean extraCheese) {
         this.extraCheese = extraCheese;
     }
+
 }
+

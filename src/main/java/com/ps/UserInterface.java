@@ -133,8 +133,8 @@ public class UserInterface {
     }
 
     private static void handleAddSandwich() {
-        // create new
-        Sandwich sandwich = new Sandwich();
+
+        Sandwich sandwich = new Sandwich(false, false);
 
         int handleSandwichCommand = 0;
         do {
@@ -144,10 +144,9 @@ public class UserInterface {
             for (int i = 0; i < breads.size(); i++) {
                 System.out.printf("%d) %s\n", i + 1, breads.get(i));
             }
-            Integer breadIndex = customerInput.nextInt() - 1;
-
-            // switch statement for bread type
-
+            int breadIndex = customerInput.nextInt() - 1;
+            sandwich.setBread(breads.get(breadIndex));
+            // DO ABOVE LINE FOR EACH PROPERTY ... SET EVERYTHING
         } while (handleSandwichCommand != 0);
 
 
@@ -165,25 +164,26 @@ public class UserInterface {
             }
 
 
-            switch (handleSandwichCommand) {
+            switch (handleSizeCommand) {
                 case 4:
-                    System.out.println(" 4 inch");
+                    sandwich.setSandwichSize(4);
                     break;
                 case 8:
-                    System.out.println(" 8 inch");
+                    sandwich.setSandwichSize(8);
                     break;
                 case 12:
-                    System.out.println(" 12 inch");
+                    sandwich.setSandwichSize(12);
                 default:
                     System.out.println("Command not found, please try again...");
             }
         } while
         (handleSandwichCommand != 0);
 
+
         addMeatTopping();
-        addisExtraMeat();
+        isExtraMeat(sandwich);
         addCheeseTopping();
-        addisExtraCheese();
+        isExtraCheese(sandwich);
         addVeggieToppings();
         addSauces();
         addSides();
@@ -196,17 +196,17 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, meatToppings.get(i));
             }
             Integer meatToppingIndex = customerInput.nextInt() - 1;
+            sandwich.meatTopping(breads.get(meatToppingIndex));
         }
 
-        // NEED REVISING ---------------------------------------
 
-        public static boolean isExtraMeat(int choice){
+        public static void isExtraMeat(Sandwich sandwich){
             System.out.println("Would you like extra meat? 1) yes 2)no ");
-            Integer response = customerInput.nextInt();
-            if ("1")
-                return "Adding extra topping";
-            else
-                return "No extra topping added";
+            int response = customerInput.nextInt();
+            if (response == 1){
+                sandwich.setExtraMeat(true);
+            }
+            sandwich.setExtraMeat(breads.get(extraMeatIndex));
         }
 
 
@@ -216,17 +216,17 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, cheeseToppings.get(i));
             }
             Integer cheeseToppingIndex = customerInput.nextInt() - 1;
+            sandwich.setcheeseTopping(breads.get(cheeseToppingIndex));
         }
 
-        // NEED REVISING ---------------------------------------
 
-        private static boolean isExtraCheese(int choice){
-            System.out.println("Would you like extra cheese?");
-            Integer response = customerInput.nextInt();
-            if ("Yes")
-                return "Adding extra cheese";
-            else
-                return "Not adding extra cheese";
+        private static void isExtraCheese(Sandwich sandwich){
+            System.out.println("Would you like extra cheese? 1) yes 2) no");
+            int response = customerInput.nextInt();
+            if (response == 1){
+                sandwich.setExtraCheese(true);
+            }
+            sandwich.setExtraCheese(breads.get(extraCheeseIndex));
         }
 
         private static void addVeggieToppings () {
@@ -235,6 +235,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, veggieToppings.get(i));
             }
             Integer veggieToppingIndex = customerInput.nextInt() - 1;
+            sandwich.setveggieToppings(breads.get(veggieToppingIndex));
         }
 
         private static void addSauces () {
@@ -243,6 +244,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, sauces.get(i));
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
+            sandwich.setaddSauces(breads.get(addSaucesIndex));
         }
 
         private static void addSides () {
@@ -251,6 +253,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, sides.get(i));
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
+            sandwich.setaddSides(breads.get(addSidesIndex));
         }
 
 
@@ -288,11 +291,15 @@ public class UserInterface {
             int index = handleAddDrink - 1;
             order.addProduct(new Drink(drinkNames[index], drinkPrice, drinkSize ));
 
+
         }
 
-        // NEED REVISING ----------------------------------------------
+
 
         private static void handleAddChips () {
+
+
+
             System.out.println("From list below, which bag of chips would you like?");
             String[] chipNames = {
                     "Sun Chips", "Pop Chips", "Kettle Brand Potato Chips", "Miss Vickie's"
@@ -301,9 +308,11 @@ public class UserInterface {
                 System.out.println(i + 1 + ")" + chipNames[i]);
             }
 
+
             int handleAddChips = commandScanner.nextInt();
             int index = handleAddChips - 1;
-            order.addProduct(new BagOfChips([index], chipPrice));
+
+            order.addProduct( new BagOfChips(chipNames[index]));
 
         }
 
@@ -312,6 +321,7 @@ public class UserInterface {
             // give options for 1)confirm 2)cancel
             // confirm) create receipt file and go back to the home screen
             // cancel) delete order and go back to the home screen
+            //take order and write to a reciept
 
         }
 
