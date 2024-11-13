@@ -196,6 +196,7 @@ public class UserInterface {
             }
             Integer meatToppingIndex = customerInput.nextInt() - 1;
             sandwich.meatTopping(breads.get(meatToppingIndex));
+            // add to order above
         }
 
 
@@ -206,6 +207,8 @@ public class UserInterface {
                 sandwich.setExtraMeat(true);
             }
             sandwich.setExtraMeat(breads.get(extraMeatIndex));
+            // add to order above
+
         }
 
 
@@ -216,6 +219,8 @@ public class UserInterface {
             }
             Integer cheeseToppingIndex = customerInput.nextInt() - 1;
             sandwich.setcheeseTopping(breads.get(cheeseToppingIndex));
+            // add to order above
+
         }
 
 
@@ -226,6 +231,8 @@ public class UserInterface {
                 sandwich.setExtraCheese(true);
             }
             sandwich.setExtraCheese(breads.get(extraCheeseIndex));
+            // add to order above
+
         }
 
         private static void addVeggieToppings () {
@@ -235,6 +242,8 @@ public class UserInterface {
             }
             Integer veggieToppingIndex = customerInput.nextInt() - 1;
             sandwich.setveggieToppings(breads.get(veggieToppingIndex));
+            // add to order above
+
         }
 
         private static void addSauces () {
@@ -244,6 +253,8 @@ public class UserInterface {
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
             sandwich.setaddSauces(breads.get(addSaucesIndex));
+            // add to order above
+
         }
 
         private static void addSides () {
@@ -253,6 +264,8 @@ public class UserInterface {
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
             sandwich.setaddSides(breads.get(addSidesIndex));
+            // add to order above
+
         }
 
 

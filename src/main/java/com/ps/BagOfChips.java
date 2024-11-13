@@ -15,17 +15,7 @@ public class BagOfChips implements Product {
         return 1.50;
     }
 
-//    @Override
-//    public String getSize(){
-//        return "N/A";
-//    }
-//
-//    // not sure why this one is gray
-//
-//    @Override
-//    public String getDescription(){
-//        return "Chips";
-//    }
+
 
     public String getChipName() {
         return name;
