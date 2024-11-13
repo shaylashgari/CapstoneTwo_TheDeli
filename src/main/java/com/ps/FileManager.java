@@ -12,10 +12,7 @@ public class FileManager {
     public static void saveOrder(Order order){
         try{
 
-            // modify line 17 based on what you want to display in csv file
-
             BufferedWriter writeOrder = new BufferedWriter(new FileWriter("Order.csv"));
-            // loop through all products and print them into the csv file
 
 
 

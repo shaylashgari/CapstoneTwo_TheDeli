@@ -181,11 +181,14 @@ public class UserInterface {
         (handleSandwichCommand != 0);
 
         addMeatTopping();
+        addisExtraMeat();
         addCheeseTopping();
+        addisExtraCheese();
         addVeggieToppings();
         addSauces();
         addSides();
     }
+
 
         private static void addMeatTopping () {
             System.out.println("What meat toppings would you like?");
@@ -195,12 +198,35 @@ public class UserInterface {
             Integer meatToppingIndex = customerInput.nextInt() - 1;
         }
 
+        // NEED REVISING ---------------------------------------
+
+        public static boolean isExtraMeat(int choice){
+            System.out.println("Would you like extra meat? 1) yes 2)no ");
+            Integer response = customerInput.nextInt();
+            if ("1")
+                return "Adding extra topping";
+            else
+                return "No extra topping added";
+        }
+
+
         private static void addCheeseTopping () {
             System.out.println("What cheese toppings would you like?");
             for (int i = 0; i < cheeseToppings.size(); i++) {
                 System.out.printf("%d) %s\n", i + 1, cheeseToppings.get(i));
             }
             Integer cheeseToppingIndex = customerInput.nextInt() - 1;
+        }
+
+        // NEED REVISING ---------------------------------------
+
+        private static boolean isExtraCheese(int choice){
+            System.out.println("Would you like extra cheese?");
+            Integer response = customerInput.nextInt();
+            if ("Yes")
+                return "Adding extra cheese";
+            else
+                return "Not adding extra cheese";
         }
 
         private static void addVeggieToppings () {
@@ -264,9 +290,21 @@ public class UserInterface {
 
         }
 
+        // NEED REVISING ----------------------------------------------
+
         private static void handleAddChips () {
-            // present chip options
-            // record chip selection
+            System.out.println("From list below, which bag of chips would you like?");
+            String[] chipNames = {
+                    "Sun Chips", "Pop Chips", "Kettle Brand Potato Chips", "Miss Vickie's"
+            };
+            for (int i = 0; i < chipNames.length; i++){
+                System.out.println(i + 1 + ")" + chipNames[i]);
+            }
+
+            int handleAddChips = commandScanner.nextInt();
+            int index = handleAddChips - 1;
+            order.addProduct(new BagOfChips([index], chipPrice));
+
         }
 
         private static void handleCheckOut () {
