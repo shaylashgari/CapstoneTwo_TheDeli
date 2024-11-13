@@ -17,7 +17,10 @@ public class Sandwich implements Product {
 
     }
 
+    public void addTopping(String topping){
+       // conditional logic where the topping needs to go, array list for sandwich I am currently making
 
+    }
 
     @Override
     public double getPrice() {

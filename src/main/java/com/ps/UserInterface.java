@@ -1,7 +1,6 @@
 package com.ps;
 
 import java.util.*;
-import java.util.zip.CheckedOutputStream;
 
 public class UserInterface {
     static final Scanner customerInput = new Scanner(System.in);
@@ -190,7 +189,7 @@ public class UserInterface {
     }
 
 
-        private static void addMeatTopping () {
+        private static void addMeatTopping (Sandwich sandwich) {
             System.out.println("What meat toppings would you like?");
             for (int i = 0; i < meatToppings.size(); i++) {
                 System.out.printf("%d) %s\n", i + 1, meatToppings.get(i));
@@ -210,7 +209,7 @@ public class UserInterface {
         }
 
 
-        private static void addCheeseTopping () {
+        private static void addCheeseTopping (Sandwich sandwich) {
             System.out.println("What cheese toppings would you like?");
             for (int i = 0; i < cheeseToppings.size(); i++) {
                 System.out.printf("%d) %s\n", i + 1, cheeseToppings.get(i));
@@ -290,7 +289,7 @@ public class UserInterface {
             int handleAddDrink = commandScanner.nextInt();
             int index = handleAddDrink - 1;
             order.addProduct(new Drink(drinkNames[index], drinkPrice, drinkSize ));
-
+            // ADD TO THE ORDER
 
         }
 
@@ -313,7 +312,7 @@ public class UserInterface {
             int index = handleAddChips - 1;
 
             order.addProduct( new BagOfChips(chipNames[index]));
-
+            // ADD TO ORDER
         }
 
         private static void handleCheckOut () {
