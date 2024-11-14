@@ -138,14 +138,12 @@ public class UserInterface {
         int handleSandwichCommand = 0;
         do {
 
-            // do this for all toppings ...
             System.out.println("What bread type would you like?");
             for (int i = 0; i < breads.size(); i++) {
                 System.out.printf("%d) %s\n", i + 1, breads.get(i));
             }
             int breadIndex = customerInput.nextInt() - 1;
             sandwich.setBread(breads.get(breadIndex));
-            // DO ABOVE LINE FOR EACH PROPERTY ... SET EVERYTHING
         } while (handleSandwichCommand != 0);
 
 
@@ -208,8 +206,12 @@ public class UserInterface {
             int response = customerInput.nextInt();
             if (response == 1){
                 sandwich.setExtraMeat(true);
-            }
 
+            }else if (response == 2){
+                sandwich.setExtraMeat(false);
+            }else {
+                System.out.println("invalid choice");
+            }
 
         }
 
@@ -231,9 +233,13 @@ public class UserInterface {
             int response = customerInput.nextInt();
             if (response == 1){
                 sandwich.setExtraCheese(true);
+            } else if (response == 2) {
+                sandwich.setExtraCheese(false);
+            }else {
+                System.out.println("invalid choice");
+
             }
-//            sandwich.setExtraCheese(breads.get(extraCheeseIndex));
-            // add to order above
+
 
         }
 
@@ -262,7 +268,12 @@ public class UserInterface {
             System.out.println("Would you like your sandwich toasted? 1) yes 2) no");
             int response = customerInput.nextInt();
             if (response == 1){
-                sandwich.isToasted(true);
+                sandwich.setToasted(true);
+            } else if (response == 2) {
+                sandwich.setToasted(false);
+
+            }else {
+                System.out.println("Invalid choice");
             }
         }
 
@@ -347,8 +358,11 @@ public class UserInterface {
 
         private static void handleCheckOut () {
 
+            System.out.println("Your order details are:  ");
+            // ---> DISPLAY ORDER DETAILS AND PRICE
 
-        // 1) DISPLAY ORDER DETAILS AND PRICE
+
+            System.out.println("Would you like to 1) Check out 2) Cancel ");
 
             // 2) CONFIRM: CREATE RECEIPT FILE & GO BACK TO HOME SCREEN
 
