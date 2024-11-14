@@ -8,6 +8,7 @@ import java.util.List;
 public class Order {
     private List<Product> products;
 
+
     public Order() {
         this.products = new ArrayList<>();
     }
@@ -38,4 +39,9 @@ public class Order {
 
     }
 
+    public Object getOrder() {
+    }
+
+    public Object getName() {
+    }
 }

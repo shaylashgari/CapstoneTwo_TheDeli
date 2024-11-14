@@ -179,9 +179,9 @@ public class UserInterface {
         (handleSandwichCommand != 0);
 
 
-        addMeatTopping();
+        addMeatTopping(sandwich);
         isExtraMeat(sandwich);
-        addCheeseTopping();
+        addCheeseTopping(sandwich);
         isExtraCheese(sandwich);
         addVeggieToppings();
         addSauces();
@@ -195,8 +195,8 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, meatToppings.get(i));
             }
             Integer meatToppingIndex = customerInput.nextInt() - 1;
-            sandwich.meatTopping(breads.get(meatToppingIndex));
-            // add to order above
+            sandwich.addMeatTopping(meatToppings.get(meatToppingIndex));
+            // add to order above CREATE THE METHOD, FOLLOW THE STRUCTURE ABOVE
         }
 
 
@@ -206,7 +206,7 @@ public class UserInterface {
             if (response == 1){
                 sandwich.setExtraMeat(true);
             }
-            sandwich.setExtraMeat(breads.get(extraMeatIndex));
+//            sandwich.setExtraMeat(breads.get(extraMeatIndex));
             // add to order above
 
         }
@@ -218,7 +218,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, cheeseToppings.get(i));
             }
             Integer cheeseToppingIndex = customerInput.nextInt() - 1;
-            sandwich.setcheeseTopping(breads.get(cheeseToppingIndex));
+//            sandwich.setcheeseTopping(breads.get(cheeseToppingIndex));
             // add to order above
 
         }
@@ -230,7 +230,7 @@ public class UserInterface {
             if (response == 1){
                 sandwich.setExtraCheese(true);
             }
-            sandwich.setExtraCheese(breads.get(extraCheeseIndex));
+//            sandwich.setExtraCheese(breads.get(extraCheeseIndex));
             // add to order above
 
         }
@@ -241,7 +241,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, veggieToppings.get(i));
             }
             Integer veggieToppingIndex = customerInput.nextInt() - 1;
-            sandwich.setveggieToppings(breads.get(veggieToppingIndex));
+//            sandwich.setveggieToppings(breads.get(veggieToppingIndex));
             // add to order above
 
         }
@@ -252,7 +252,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, sauces.get(i));
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
-            sandwich.setaddSauces(breads.get(addSaucesIndex));
+//            sandwich.setaddSauces(breads.get(addSaucesIndex));
             // add to order above
 
         }
@@ -263,7 +263,7 @@ public class UserInterface {
                 System.out.printf("%d) %s\n", i + 1, sides.get(i));
             }
             Integer saucesIndex = customerInput.nextInt() - 1;
-            sandwich.setaddSides(breads.get(addSidesIndex));
+//            sandwich.setaddSides(breads.get(addSidesIndex));
             // add to order above
 
         }
@@ -329,11 +329,13 @@ public class UserInterface {
         }
 
         private static void handleCheckOut () {
+
+
             //display order details and price
             // give options for 1)confirm 2)cancel
             // confirm) create receipt file and go back to the home screen
             // cancel) delete order and go back to the home screen
-            //take order and write to a reciept
+            //take
 
         }
 

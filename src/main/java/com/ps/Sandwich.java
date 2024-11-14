@@ -1,5 +1,6 @@
 package com.ps;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich implements Product {
@@ -11,14 +12,21 @@ public class Sandwich implements Product {
     boolean extraMeat;
     boolean extraCheese;
 
+
     public Sandwich(boolean extraMeat, boolean extraCheese) {
+        meatToppings = new ArrayList<>();
+        cheeseToppings = new ArrayList<>();
+        // add other toppings
         this.extraMeat = extraMeat;
         this.extraCheese = extraCheese;
 
     }
 
-    public void addTopping(String topping){
+    public void addMeatTopping(String topping){
        // conditional logic where the topping needs to go, array list for sandwich I am currently making
+        // create a class
+        // do a different method for each of topping, just line below
+        meatToppings.add(topping);
 
     }
 
