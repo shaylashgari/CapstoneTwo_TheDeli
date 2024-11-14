@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Sandwich implements Product {
     private String bread;
-    private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides;
+    private List<String> meatToppings, cheeseToppings, regularToppings, sauce, sides, drinks, chips;
     private boolean isToasted;
     private int sandwichSize;
 
@@ -16,7 +16,11 @@ public class Sandwich implements Product {
     public Sandwich(boolean extraMeat, boolean extraCheese) {
         meatToppings = new ArrayList<>();
         cheeseToppings = new ArrayList<>();
-        // add other toppings
+        regularToppings = new ArrayList<>();
+        sauce = new ArrayList<>();
+        sides = new ArrayList<>();
+        drinks = new ArrayList<>();
+        chips = new ArrayList<>();
         this.extraMeat = extraMeat;
         this.extraCheese = extraCheese;
 
@@ -29,6 +33,34 @@ public class Sandwich implements Product {
         meatToppings.add(topping);
 
     }
+
+    public void addCheeseTopping(String topping){
+        cheeseToppings.add(topping);
+    }
+
+    public void addVeggieTopping(String topping){
+        regularToppings.add(topping);
+    }
+
+    public void addSauce (String topping){
+        sauce.add(topping);
+    }
+
+    public void addSides (String side){
+        sides.add(side);
+    }
+
+    public void addDrinks (String drink){
+        drinks.add(drink);
+    }
+
+    public void addChip (String chip){
+        chips.add(chip);
+    }
+
+
+
+
 
     @Override
     public double getPrice() {
