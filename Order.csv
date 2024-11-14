@@ -1,0 +1,1 @@
+Sandwich{bread='wheat', meatToppings=[ham], cheeseToppings=[american], regularToppings=[pickles], sauce=[mustard], sides=[au jus], drinks=[], chips=[], isToasted=false, sandwichSize=4, extraMeat=true, extraCheese=true, totalPrice= 7.0}

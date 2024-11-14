@@ -184,8 +184,7 @@ public class UserInterface {
         addVeggieToppings(sandwich);
         addSauces(sandwich);
         addSides(sandwich);
-
-        addSandwich(sandwich);
+        order.addProduct(sandwich);
     }
 
 
@@ -277,11 +276,6 @@ public class UserInterface {
             }
         }
 
-        private static void addSandwich(Sandwich sandwich){
-            Product product;
-            product = sandwich;
-            order.addProduct(product);
-        }
 
         private static void addSides (Sandwich sandwich) {
             System.out.println("What side would you like?");
@@ -355,15 +349,46 @@ public class UserInterface {
             order.addProduct( new BagOfChips(chipNames[index]));
 
         }
-
+            //
         private static void handleCheckOut () {
 
-            System.out.println("Your order details are:  ");
-            // ---> DISPLAY ORDER DETAILS AND PRICE
-
-
             System.out.println("Would you like to 1) Check out 2) Cancel ");
+            int checkout;
 
+
+            try{
+                checkout = commandScanner.nextInt();
+            }catch (InputMismatchException ime){
+                System.out.println("selection not found, please try again.");
+
+                return;
+            }
+
+            switch(checkout){
+                case 1:
+                    System.out.println("Your order details are: ");
+                    for(Product product: order.getProducts()){
+                        System.out.println(product);
+                    }
+                    double total = order.getOrderTotal();
+                    String orderString = "";
+                    for(Product product: order.getProducts()){
+                        orderString += product;
+                    }
+                        FileManager.saveOrder(orderString);
+                    System.out.println("Your order has been saved. ");
+                    break;
+                case 2:
+                    System.out.println("Order cancelled.");
+                    break;
+                default:
+                    System.out.println("selection not found, please try again");
+                    break;
+            }
+
+
+
+            // ---> DISPLAY ORDER DETAILS AND PRICE
             // 2) CONFIRM: CREATE RECEIPT FILE & GO BACK TO HOME SCREEN
 
             // 3)CANCEL: DELETE ORDER AND GO BACK TO HOME SCREEN

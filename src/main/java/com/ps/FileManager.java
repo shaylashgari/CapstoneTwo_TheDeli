@@ -11,21 +11,19 @@ public class FileManager {
     // copy and paste from last capstone
     // where you would have buffer writer
 
-    public static void saveOrder(Order order){
+    public static void saveOrder(String reciept){
+
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         String formattedDate = dateFormatter.format(LocalDateTime.now());
+        String fileName = "reciept" + formattedDate + ".txt";
 
         try{
 
 
 
             BufferedWriter writeOrder = new BufferedWriter(new FileWriter("Order.csv"));
-            String firstLine = String.format("%s|%s|%s\n",
-                    order.getName(),
-                    order.getOrder(),
-                    order.getOrderTotal()
-            );
+            writeOrder.write(reciept);
 
 
 

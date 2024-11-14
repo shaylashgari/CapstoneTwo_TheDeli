@@ -68,15 +68,40 @@ public class Sandwich implements Product {
     public double getPrice() {
         int totalPrice = 0;
 
-        // calculate price of sandwich here
-        // if statement for size of sandwich
-        // ticket price example, capstone prep
-
         if (sandwichSize == 4 ){
+            totalPrice += 5.50; // base
+            totalPrice += 1;    // meat
+            totalPrice += .75; // cheese
+            if(extraMeat) {
+                totalPrice += .50;
+            }
+            if (extraCheese){
+                totalPrice += .30;
+            }
 
+        } else if (sandwichSize == 8) {
+            totalPrice += 7.00; // base
+            totalPrice += 2;    // meat
+            totalPrice += 1.50; // cheese
+            if(extraMeat){
+                totalPrice += 1;
+            }
+            if (extraCheese){
+                totalPrice += .60;
+            }
+
+        } else if (sandwichSize == 12) {
+            totalPrice += 8.50; //base
+            totalPrice += 3;    // meat
+            totalPrice += 2.25;  // cheese
+
+        }if(extraMeat){
+            totalPrice += 1.50;
+        }if(extraCheese){
+            totalPrice += .90;
         }
 
-        return 0;
+        return totalPrice;
     }
 
 
@@ -168,5 +193,23 @@ public class Sandwich implements Product {
         this.extraCheese = extraCheese;
     }
 
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "bread='" + bread + '\'' +
+                ", meatToppings=" + meatToppings +
+                ", cheeseToppings=" + cheeseToppings +
+                ", regularToppings=" + regularToppings +
+                ", sauce=" + sauce +
+                ", sides=" + sides +
+                ", drinks=" + drinks +
+                ", chips=" + chips +
+                ", isToasted=" + isToasted +
+                ", sandwichSize=" + sandwichSize +
+                ", extraMeat=" + extraMeat +
+                ", extraCheese=" + extraCheese +
+                ", totalPrice= " + getPrice() +
+                '}';
+    }
 }
 

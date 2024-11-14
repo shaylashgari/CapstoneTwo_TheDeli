@@ -25,4 +25,10 @@ public class BagOfChips implements Product {
         this.name = chipName;
     }
 
+    @Override
+    public String toString() {
+        return "BagOfChips{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

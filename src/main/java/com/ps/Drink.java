@@ -44,4 +44,12 @@ public class Drink implements Product{
         this.size = size;
     }
 
+    @Override
+    public String toString() {
+        return "Drink{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", size='" + size + '\'' +
+                '}';
+    }
 }

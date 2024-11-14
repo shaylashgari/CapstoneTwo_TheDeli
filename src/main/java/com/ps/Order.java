@@ -13,7 +13,7 @@ public class Order {
         this.products = new ArrayList<>();
     }
 
-    public void addProduct( Product product){
+    public void addProduct(Product product) {
         this.products.add(product);
     }
 
@@ -25,7 +25,7 @@ public class Order {
         this.products = products;
     }
 
-    public static void addDrink( Drink drink ){
+    public static void addDrink(Drink drink) {
 
     }
 
@@ -38,10 +38,6 @@ public class Order {
         return orderTotal;
 
     }
+}
 
-    public Object getName() {
-    }
-
-    public Object getOrder() {
-    }
 
