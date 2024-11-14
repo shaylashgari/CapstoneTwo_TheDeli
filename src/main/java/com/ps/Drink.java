@@ -11,9 +11,32 @@ public class Drink implements Product{
         this.price = price;
         this.size = size;
     }
+    public Drink(String name, String size){
+        this.name = name;
+        this.size = size;
+    }
 
     public double getPrice(){
-        return this.price;
+
+        // put logic for price for drink here
+        switch (this.size.toLowerCase()){
+            case "small" :
+
+                return 2;
+
+            case "midium":
+
+                return 2.50;
+
+            case "large":
+
+                return 3;
+            default:
+                return 0;
+
+        }
+
+
     }
 
     public String getSize(){

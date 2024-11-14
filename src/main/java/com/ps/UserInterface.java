@@ -324,7 +324,7 @@ public class UserInterface {
 
             int handleAddDrink = commandScanner.nextInt();
             int index = handleAddDrink - 1;
-            order.addProduct(new Drink(drinkNames[index], drinkPrice, drinkSize ));
+            order.addProduct(new Drink(drinkNames[index],drinkPrice, drinkSize));
 
         }
 
@@ -371,6 +371,7 @@ public class UserInterface {
                         System.out.println(product);
                     }
                     double total = order.getOrderTotal();
+                    System.out.println("Your order total is $" + total );
                     String orderString = "";
                     for(Product product: order.getProducts()){
                         orderString += product;

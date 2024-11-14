@@ -66,14 +66,17 @@ public class Sandwich implements Product {
 
     @Override
     public double getPrice() {
-        int totalPrice = 0;
+        double totalPrice = 0;
+
 
         if (sandwichSize == 4 ){
             totalPrice += 5.50; // base
             totalPrice += 1;    // meat
             totalPrice += .75; // cheese
+
             if(extraMeat) {
                 totalPrice += .50;
+
             }
             if (extraCheese){
                 totalPrice += .30;
@@ -95,13 +98,17 @@ public class Sandwich implements Product {
             totalPrice += 3;    // meat
             totalPrice += 2.25;  // cheese
 
-        }if(extraMeat){
-            totalPrice += 1.50;
-        }if(extraCheese){
-            totalPrice += .90;
+            if(extraMeat){
+                totalPrice += 1.50;
+            }if(extraCheese){
+                totalPrice += .90;
+            }
         }
 
+
+
         return totalPrice;
+
     }
 
 
