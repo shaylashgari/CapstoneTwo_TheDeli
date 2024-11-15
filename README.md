@@ -4,7 +4,7 @@
 
 
 
-### Below is my diagram for how I have organized my code to execute the coding of this Java-based console application.
+### Below is my diagram for how I have organized my code to execute the coding of this project. 
 ![Screenshot 2024-11-14 at 6 44 07 PM](https://github.com/user-attachments/assets/58f3074c-c50b-4726-8630-69617a343ba6)
 
 ### Below is how the user interface would look like:
