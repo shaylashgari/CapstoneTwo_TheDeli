@@ -11,3 +11,8 @@
 <img width="577" alt="Screenshot 2024-11-14 at 6 52 44 PM" src="https://github.com/user-attachments/assets/10b58e5c-56b8-4f33-800d-8f4af777eb43">
 <img width="690" alt="Screenshot 2024-11-14 at 6 53 13 PM" src="https://github.com/user-attachments/assets/ace8309f-0d0b-4a1f-9f29-ac60a7e9dff5">
 <img width="644" alt="Screenshot 2024-11-14 at 6 53 52 PM" src="https://github.com/user-attachments/assets/1dfbae80-ed9c-4887-a2a4-a551d43342f0">
+
+### Piece of code I find interesting:
+<img width="552" alt="Screenshot 2024-11-14 at 7 11 09 PM" src="https://github.com/user-attachments/assets/7c0974c7-77e5-465e-8d35-e7ed4cd2fd2a">
+
+
